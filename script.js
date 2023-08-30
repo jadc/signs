@@ -30,7 +30,9 @@ function boxHandler(e){
 function readStorage(){
     const categories = document.querySelectorAll("section");
     categories.forEach(c => {
-        for(let sign of localStorage.getItem(c.id).split(",")){
+        let memory = localStorage.getItem(c.id);
+        if(!memory) memory = "";
+        for(let sign of memory.split(",")){
             c.lastElementChild.appendChild(createBox(sign))
         }
     });
