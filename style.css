@@ -67,6 +67,10 @@ button {
     box-shadow: 0 0 1rem 0 var(--bg-3);
 }
 
+button > img {
+    width: 100%;
+}
+
 button:hover {
     background-color: var(--bg-3);
 }
