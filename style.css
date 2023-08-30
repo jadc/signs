@@ -1,0 +1,72 @@
+:root {
+    --bg: black;
+    --text: white;
+    --bg-2: #111;
+    --bg-3: #333;
+}
+
+* {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu;
+}
+
+body {
+    color: var(--text);
+    background-color: var(--bg);
+    margin: 0;
+}
+h1 {
+    margin-left: 1rem;
+}
+
+a {
+    color: var(--text);
+}
+
+input {
+    width: 100%;
+    padding: .5rem;
+    box-sizing: border-box;
+
+    border: none;
+    color: var(--text);
+    background-color: var(--bg-2);
+    
+    text-align: center;
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+input:not(:last-child) {
+    border-bottom: 4px dotted var(--bg);
+}
+
+input:focus {
+    border: 2px solid white;
+}
+
+nav {
+    position: fixed;
+    top: .75rem;
+    right: .75rem;
+}
+
+button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    width: 3rem;
+    height: 3rem;
+    padding: .75rem;
+    border-radius: 50%;
+    background-color: var(--bg-2);
+    border: 2px solid var(--bg-3);
+    color: var(--text);
+
+    box-shadow: 0 0 1rem 0 var(--bg-3);
+}
+
+button:hover {
+    background-color: var(--bg-3);
+}
