@@ -48,6 +48,21 @@ function clearBoxes(){
     readStorage();
 }
 
+function cacheForOffline(){
+    // Service worker registration
+    if("serviceWorker" in navigator) {
+        window.addEventListener("load", function() {
+            navigator.serviceWorker.register("worker.js")
+                .then(registration => {
+                    console.log("Service worker registered, scope:", registration.scope);
+                })
+                .catch(err => {
+                    console.log("Service worker failed:", err);
+                });
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const boxes = document.querySelectorAll("input");
 
@@ -65,4 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
             clearBoxes();
         }
     })
+
+    cacheForOffline();
 });
